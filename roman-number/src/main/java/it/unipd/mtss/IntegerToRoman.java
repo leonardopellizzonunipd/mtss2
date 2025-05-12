@@ -9,8 +9,8 @@ public class IntegerToRoman {
     // Converte un numero in numeri Romani
     public static String convert(int number) {
         // Controllo sull'input
-        if (number > 10 || number < 1) {
-            throw new IllegalArgumentException("Il numero non è compreso tra 0 e 11");
+        if (number > 20 || number < 1) {
+            throw new IllegalArgumentException("Il numero non è compreso tra 0 e 21");
         }
 
         // Inizializzazione valori e corrispondenti numeri romani
