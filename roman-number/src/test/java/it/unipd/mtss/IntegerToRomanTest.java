@@ -38,10 +38,14 @@ public class IntegerToRomanTest {
         assertEquals("LXXX", IntegerToRoman.convert(80));
         assertEquals("XC", IntegerToRoman.convert(90));
         assertEquals("C", IntegerToRoman.convert(100));
+        assertEquals("CC", IntegerToRoman.convert(200));
+        assertEquals("CCC", IntegerToRoman.convert(300));
+        assertEquals("CD", IntegerToRoman.convert(400));
+        assertEquals("D", IntegerToRoman.convert(500));
     }
     @Test
     public void testIllegalArgumentException(){
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(0));
-        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(101));
+        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(501));
     }
 }

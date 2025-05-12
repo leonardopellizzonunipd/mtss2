@@ -9,13 +9,13 @@ public class IntegerToRoman {
     // Converte un numero in numeri Romani
     public static String convert(int number) {
         // Controllo sull'input
-        if (number > 100 || number < 1) {
-            throw new IllegalArgumentException("Il numero non è compreso tra 0 e 101");
+        if (number > 500 || number < 1) {
+            throw new IllegalArgumentException("Il numero non è compreso tra 0 e 501");
         }
 
         // Inizializzazione valori e corrispondenti numeri romani
-        int[] values = {100, 90, 50, 40, 10, 9, 5, 4, 1};
-        String[] romanNumbers = {"C", "XC", "L", 
+        int[] values = {500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] romanNumbers = {"D", "CD", "C", "XC", "L", 
         "XL", "X", "IX", "V", "IV", "I"};
         
         StringBuilder result = new StringBuilder();
