@@ -8,7 +8,7 @@ package it.unipd.mtss;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
+ 
 public class IntegerToRomanTest {
     @Test
     public void testConvert() {
@@ -27,10 +27,16 @@ public class IntegerToRomanTest {
         assertEquals("XVI", IntegerToRoman.convert(16));
         assertEquals("XVIII", IntegerToRoman.convert(18));
         assertEquals("XX", IntegerToRoman.convert(20));
+        assertEquals("XXV", IntegerToRoman.convert(25));
+        assertEquals("XXX", IntegerToRoman.convert(30));
+        assertEquals("XXXV", IntegerToRoman.convert(35));
+        assertEquals("XL", IntegerToRoman.convert(40));
+        assertEquals("XLV", IntegerToRoman.convert(45));
+        assertEquals("L", IntegerToRoman.convert(50));
     }
     @Test
     public void testIllegalArgumentException(){
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(0));
-        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(21));
+        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(51));
     }
 }
