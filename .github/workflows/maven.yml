@@ -1,0 +1,27 @@
+name: Java CI with Maven
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8.0.412+8'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven
+      working-directory: roman-number
+      run: mvn -B install
+    - name: Test coverage with Jacoco
+      working-directory: roman-number
+      run: mvn test jacoco:report
+    - name: Send coverage results to Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
